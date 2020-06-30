@@ -20,8 +20,8 @@ except ImportError:  # 3.X
 
 
 def merge_zip_files(target, sources):
-    seen = set()
     with ZipFile(target, "w") as zf_dst:
+        seen = set()
         for path in sources:
             with ZipFile(path, "r") as zf_src:
                 for name in zf_src.namelist():
